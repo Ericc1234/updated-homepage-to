@@ -1,0 +1,682 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #F3EFF5;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Container */
+/* Base styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 20px;
+    margin: auto;
+    width: 100%;
+}
+
+/* Thumbnail */
+.thum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 25%;
+}
+
+.thum img {
+    object-fit: cover; /* or cover, depending on your needs */
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Description */
+.des {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 35%;
+    min-height: 200px;
+    overflow: hidden; 
+    align-items: flex-start;
+}
+
+/* Container for course name and star rating */
+.course-header {
+    display: flex;
+    justify-content: space-between; /* Ensures items are spaced out, with name on the left and ratings on the right */
+    align-items: center; 
+    width: 100%; /* Make sure the header occupies the full width of the parent container */
+}
+
+.course-name {
+    font-size: 2rem; 
+    font-weight: bold;
+    width: 100%; /* Adjust the width as needed */
+    max-width: 50%; 
+    overflow-wrap: break-word; 
+    box-sizing: border-box; 
+    height: 70px;
+}
+
+.star-ratings-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    margin-left: auto; /* This pushes the star ratings to the far right */
+    
+}
+
+.course-rating-number {
+    font-size: clamp(1.2rem, 1.5vw, 1.2rem);
+    font-weight: bold;
+}
+
+.star-ratings {
+    display: flex;
+    gap: 0.25rem;
+}   
+
+
+.instructor-name  {
+    font-size: clamp(1.7rem, 1.5vw, 1.2rem);
+}
+
+.lig {
+    font-size: clamp(1.4rem, 1.5vw, 1.2rem);
+    
+}
+.description {
+    font-size: clamp(1.2rem, 1.5vw, 1.2rem);
+}
+
+p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+   
+}
+
+
+/* Comments */
+.com {
+    border: 1px solid #c1c2c3;
+    padding: 10px;
+    width: 25%;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Recommendations */
+.recom {
+    margin-top: 2rem;
+    margin-left: 2.5%;
+    border: 2px solid #34495E;
+    height: 200px;
+    width: 95%;
+    background: #F7F9F9;
+    padding: 10px;
+}
+
+/* Enroll Button */
+.enroll-button {
+    background: linear-gradient(90deg, #70D039, #CDE859);
+    color: #131A39; 
+    border: none;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    font-style: italic;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.enroll-button:hover {
+    background: linear-gradient(90deg, #70D039, #CDE859);
+}
+
+
+
+/* Course Box */
+.course-box {
+    position: relative;
+    background-color: transparent;
+    padding: 20px;
+    flex: 0 0 auto;
+    text-align: left;
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+}
+
+
+.courses-container {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    gap: 1rem;
+    width: calc(95% - 80px);
+    margin: 0 auto;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 10;
+    border: #c2c2c2 solid 0.2px;
+}
+
+.arrow:hover {
+    background-color: #9c9a9a;
+    color: #000;
+}
+
+.arrow.left {
+    left: 20px;
+}
+
+.arrow.right {
+    right: 20px;
+}
+
+
+/* Course Item */
+.course-item {
+
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Folder */
+.folder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    border: #e4e4e4 solid 1px;
+    width: 250px;
+    height: 250px;
+    margin: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+    
+}
+.folder h3.cn {
+    margin: 0; 
+    font-size: 1.2rem; 
+    line-height: 1.4;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis; 
+    white-space: normal; 
+    box-sizing: border-box; 
+}
+
+.folder:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(51, 51, 51, 0.2);
+}
+
+/* Course Thumbnail */
+.course-thumbnail {
+    max-height: 120px;
+    object-fit: cover;
+}
+
+/* Description */
+#description {
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+    width: 100%;
+    color: #000000;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    box-sizing: border-box; 
+    height: 140px;
+}
+
+/* General comments container */
+/* General comments container */
+.comment-item, .reply-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 5px 15px;
+    background-color: transparent;
+}
+
+/* Reply styling */
+.reply-item {
+    border: none; /* No border for replies */
+    margin-top: 10px;
+    padding-left: 30px; /* Increase padding for nested replies */
+}
+
+
+/* Comment and reply headers */
+.comment-header, .reply-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* Reduced margin for a tighter layout */
+}
+
+.comment-author, .reply-author {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.comment-time, .reply-time {
+    font-size: 12px;
+    color: #888888; /* Lighter color for timestamps */
+}
+
+/* Replies container */
+.replies-container {
+    overflow: hidden;
+    max-height: 0; /* Initial state, fully collapsed */
+    margin-top: 10px;
+    
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: transparent;
+
+}
+
+/* Showing replies */
+.replies-container.show {
+    max-height: 100%; /* Set a max-height large enough to accommodate most content */
+    overflow-y: auto;
+    padding-right: 10px; /* Add padding to accommodate scrollbar */
+}
+
+/* Reply form styling */
+.reply-form {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+
+}
+
+.reply-form textarea {
+    background-color: transparent;
+    width: 100%; 
+    padding: 10px;
+    border: none; 
+    border-bottom: 1px solid #9b9999;
+    font-size: 14px;
+    height: 50px; 
+    resize: none; 
+    outline: none; /* Prevents the default browser outline */
+    transition: border-bottom 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.reply-form textarea:focus {
+    border-bottom: 2px solid #b1b1b1; /* Keep the bottom border on focus */
+    outline: none; /* Ensures no extra outline is shown */
+}
+
+/* Reply buttons */
+.reply-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.submit-reply, .cancel-reply {
+    background-color: transparent; 
+    border: 1px solid; 
+    color: #000; 
+    padding: 6px 12px;
+    border-radius: 5px; /* Rounded buttons */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.submit-reply {
+    color: #ffffff;
+    background-color: #0067d3;
+    border-color: #3382f9; /* Border color matching the button color */
+}
+
+.cancel-reply {
+    border-color: #cccccc; /* Border color for cancel button */
+}
+
+.submit-reply:hover {
+    background-color: #1f5cb7; /* Darker blue on hover */
+}
+
+.cancel-reply:hover {
+    border-color: #999999; /* Darker grey on hover */
+}
+
+/* Comment actions */
+.comment-actions {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.reply-button, .like-button, .dislike-button {
+    border: none;
+    background: none;
+    color: #065fd4;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reply-button:hover, .like-button:hover, .dislike-button:hover {
+    text-decoration: underline;
+}
+
+/* SVG icons */
+.like-button svg, .dislike-button svg {
+    margin-right: auto;
+    margin-top: 10px;
+    width: 24px;
+    height: 24px;
+    fill: #888888; /* Gray icons */
+}
+
+.like-button:hover svg, .dislike-button:hover svg {
+    fill: #065fd4; /* Change color on hover */
+}
+
+/* See Replies button - Aligned to the left */
+.see-replies-button {
+    color: #0067d3;                     
+    border: none;                                    
+    font-size: 14px;                   
+    cursor: pointer;
+    margin-top: 10px;                         
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+    margin-right: auto;
+}
+
+.see-replies-button:hover {
+    color: #0059b3;                  
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .des, .thum, .com, .course-obj, .course-thumbnail {
+        width: 100%;
+    }
+
+    .enroll-button {
+        margin-top: 1rem;
+        width: 100%;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .arrow {
+        display: none; /* Hide arrow elements */
+    }
+    /* Container for course name and star rating */
+    .course-header {
+        display: grid; 
+    
+    }
+    #description {
+        font-size: 14px;
+    }
+    
+    /* Course name styling */
+    .course-name {
+        font-size: clamp(1.8rem, 4vw, 1.4rem);
+        color: #000000;
+        width: 80%; 
+        max-width: 100%; 
+        overflow-wrap: break-word; 
+        box-sizing: border-box; 
+        max-height: 55 px; 
+        height: auto;
+
+    }
+    
+    /* Star rating styling */
+    .star-rating { /* Ensure the class name matches your HTML */
+        left: 0;
+    }
+
+    .courses-container {
+        overflow-x: auto; /* Ensure horizontal scrolling is enabled */
+        -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+    }
+    .com {
+
+        height: 300px;
+       
+    }
+    .thum {
+      
+        height: 200px;
+
+    }
+    .see-replies-button {
+        width: 38%;         
+    }
+
+    /* Enroll Button */
+    .enroll-button {
+    width: 180px;
+    }
+
+    .courses-container {
+       
+        width: calc(100% - 80px);
+       
+    }
+
+    .star-ratings-container {
+        
+        margin-right: 100%; 
+        flex-shrink: 0;
+    }
+    .star-ratings {
+        flex-shrink: 0;
+    }   
+    
+
+    
+}
+
+
+@media (min-width: 769px) and (max-width: 1099px) {
+
+    /* Container */
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    /* Thumbnail */
+    .thum {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Description */
+    .des {
+        width: 100%;
+    }
+
+    /* Course Header */
+    .course-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .course-name {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .star-ratings-container {
+        margin-left: 0;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .course-rating-number {
+        font-size: 1.2rem;
+    }
+
+    /* Comments */
+    .com {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Recommendations */
+    .recom {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Enroll Button */
+    .enroll-button {
+        width: 100%;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    /* Course Box */
+    .course-box {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10%;
+    }
+
+    /* Courses Container */
+    .courses-container {
+        
+        width: 81%; /* Reduced width */
+        gap: 0.5rem;
+    }
+
+    /* Arrows */
+    .arrow.left, .arrow.right {
+        top: 50%;
+        font-size: 1.8rem; /* Smaller font size */
+        width: 40px; /* Reduced size */
+        height: 40px; /* Reduced size */
+    }
+
+    /* Course Item */
+    .course-item {
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    
+    /* Description */
+    #description {
+        font-size: 1.5rem;
+        height: auto;
+    }
+
+    /* Comment and Reply Styling */
+    .comment-item, .reply-item {
+        padding: 5px;
+    }
+
+    /* Reply Form */
+    .reply-form {
+        padding: 5px;
+    }
+
+    .reply-form textarea {
+        font-size: 12px;
+        height: 40px;
+    }
+
+    /* Reply Buttons */
+    .reply-buttons {
+        margin-top: 0;
+        gap: 5px;
+    }
+
+    .submit-reply, .cancel-reply {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    /* Comment Actions */
+    .comment-actions {
+        gap: 10px;
+        margin-left: 10px;
+    }
+
+    .reply-button, .like-button, .dislike-button {
+        font-size: 12px;
+    }
+
+    .like-button svg, .dislike-button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* See Replies Button */
+    .see-replies-button {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    /* General adjustments */
+}   
+
+@media (min-width: 1100px){
+
+    .star-ratings-container {
+        
+        margin-bottom: auto;
+        
+    }
+}
